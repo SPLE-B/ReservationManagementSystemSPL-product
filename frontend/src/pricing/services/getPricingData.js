@@ -6,8 +6,9 @@ import { notifyError } from "@/commons/utils/toaster";
 const getPricingData = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
-	let body = Object.assign(params, {token});
-	return axios.post(`${environment.rootApi}/call/pricing/detail`, body, {
+	let paramsGet = Object.assign(params, {token});
+	return axios.get(`${environment.rootApi}/call/pricing/detail`, {
+		params: paramsGet,		
 		headers: {
 			'Authorization': token,
 		}

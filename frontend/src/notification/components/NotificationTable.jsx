@@ -5,8 +5,8 @@ import { useParams } from "@/commons/hooks/useParams"
 import { useAuth } from '@/commons/auth';
 import { Button, Modal, Spinner } from '@/commons/components';
 import * as Layouts from "@/commons/layouts";
-const NotificationTable = ({ notificationListData,
-	}) => {
+const NotificationTable = ({ 
+    notificationListData}) => {
   const { checkPermission } = useAuth();
   
   return (

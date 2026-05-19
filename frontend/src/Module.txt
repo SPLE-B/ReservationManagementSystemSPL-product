@@ -64,6 +64,288 @@ Pricing
 
 	
 	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+Payment
+	tes1 Payment Page
+	tes1 Add Payment Page
+	tes1 Detail Payment Page
+	tes1 Update Payment Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+Notification
+	tes1 Notification Page
+	tes1 Add Notification Page
+
+
+	
+
+	
+	
+
+
+
+
+
+
+Cancellation
+	tes1 Cancellation Page
+	tes1 Add Cancellation Page
+
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+Rating
+	tes1 Rating Page
+	tes1 Add Rating Page
+	tes1 Update Rating Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+BookingType
+	tes1 Booking Page
+	tes1 Add Booking Page
+	tes1 Detail Booking Page
+	tes1 Update Booking Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+Pricing
+	tes1 Table Pricing Page
+	tes1 Tambah Pricing Page
+	tes1 Update Pricing Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+Payment
+	tes1 Payment Page
+	tes1 Add Payment Page
+	tes1 Detail Payment Page
+	tes1 Update Payment Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+Notification
+	tes1 Notification Page
+	tes1 Add Notification Page
+
+
+	
+
+	
+	
+
+
+
+
+
+
+Cancellation
+	tes1 Cancellation Page
+	tes1 Add Cancellation Page
+
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+Rating
+	tes1 Rating Page
+	tes1 Add Rating Page
+	tes1 Update Rating Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+BookingType
+	tes1 Booking Page
+	tes1 Add Booking Page
+	tes1 Detail Booking Page
+	tes1 Update Booking Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+Pricing
+	tes1 Table Pricing Page
+	tes1 Tambah Pricing Page
+	tes1 Update Pricing Page
+
+
+	
+
+	
+	
+
+	
 	
 
 	

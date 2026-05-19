@@ -6,10 +6,8 @@ import { useAuth } from '@/commons/auth';
 import { Button, Modal, Spinner } from '@/commons/components';
 import { isMobile } from '@/commons/utils/responsive';
 import * as Layouts from "@/commons/layouts";
-const PaymentTable = ({ paymentListData,
-		 
-
-	}) => {
+const PaymentTable = ({ 
+    paymentListData}) => {
   const { checkPermission } = useAuth();
   const navigate = useNavigate();
   const detail = async (paymentItem) => {

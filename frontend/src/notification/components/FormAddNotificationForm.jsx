@@ -61,8 +61,8 @@ const FormAddNotificationForm = ({
 		  formFields={[
 	
 	      <Controller
-	        key="slot"
-	        name="slot"
+	        key="statusMessage"
+	        name="statusMessage"
 	        control={control}
 	        render={({ field, fieldState }) => (
 	        <InputField
@@ -77,8 +77,8 @@ const FormAddNotificationForm = ({
 	
 	,
 	      <Controller
-	        key="slot"
-	        name="slot"
+	        key="typeMessage"
+	        name="typeMessage"
 	        control={control}
 	        render={({ field, fieldState }) => (
 	        <InputField
@@ -93,8 +93,8 @@ const FormAddNotificationForm = ({
 	
 	,
 	      <Controller
-	        key="slot"
-	        name="slot"
+	        key="message"
+	        name="message"
 	        control={control}
 	        render={({ field, fieldState }) => (
 	        <InputField

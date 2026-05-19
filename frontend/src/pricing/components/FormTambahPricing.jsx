@@ -22,6 +22,7 @@ import { notifyError, notifySuccess} from "@/commons/utils/toaster";
 import * as Layouts from "@/commons/layouts";
 
 const FormTambahPricing = ({ 
+	resourceListData
  }) => {
   const { 
     control, 
@@ -61,24 +62,6 @@ const FormTambahPricing = ({
 		  formFields={[
 	
 	      <Controller
-	        key="idResource"
-	        name="idResource"
-	        control={control}
-	        rules={{ required: "Harap masukkan id resource" }} 
-	        render={({ field, fieldState }) => (
-	        <InputField
-	          label="Id Resource"
-	          placeholder="Masukkan id resource"
-	          type="number"
-	          fieldState={fieldState}
-	          {...field}
-	          isRequired={true}
-	        />
-	        )}
-	      />
-	
-	,
-	      <Controller
 	        key="basePrice"
 	        name="basePrice"
 	        control={control}
@@ -97,6 +80,25 @@ const FormTambahPricing = ({
 	
 		  ,
 	
+	
+	      <Controller
+	        key="idResource"
+	        name="idResource"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <SelectionField
+	          
+	          label="Resource"
+	          options={resourceListData}
+	          optionKey="idResource"
+	          optionLabel="name"
+	          placeholder="Masukkan resource"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
 		  ]}
 	
 		  itemsEvents={[

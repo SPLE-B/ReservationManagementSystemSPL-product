@@ -8,11 +8,8 @@ import { Button } from '@/commons/components';
 
 import * as Layouts from "@/commons/layouts";
 
-const RatingCard = ({ ratingListData,
-		 
-		 
-
-	}) => {
+const RatingCard = ({ 
+    ratingListData}) => {
   const { checkPermission } = useAuth();
   
   return (
