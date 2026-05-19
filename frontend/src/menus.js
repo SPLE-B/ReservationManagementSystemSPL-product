@@ -93,3 +93,11 @@ addMenu({
     permission: '',
 	subMenus: [],
 })
+
+addMenu({
+	id: '_GXqPgFOOEfGxn8QtHyjOLA',
+	route: '/dynamic',
+    label: 'Dynamic',
+    permission: '',
+	subMenus: [],
+})

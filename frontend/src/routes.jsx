@@ -10,6 +10,7 @@ import pricingRoutes from "@/pricing/routes";
 import paymentRoutes from "@/payment/routes";
 import notificationRoutes from "@/notification/routes";
 import cancellationRoutes from "@/cancellation/routes";
+import dynamicRoutes from "@/dynamic/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
@@ -24,6 +25,7 @@ const GlobalRoutes = () => {
 	...paymentRoutes, 
 	...notificationRoutes, 
 	...cancellationRoutes, 
+	...dynamicRoutes, 
   ])
   return router
 }
