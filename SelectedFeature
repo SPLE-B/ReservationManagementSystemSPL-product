@@ -1,0 +1,10 @@
+Resource
+BookingType
+SessionBased
+Pricing
+Dynamic
+Payment
+BankTransfer
+Cancellation
+CancellationPaid
+Rating

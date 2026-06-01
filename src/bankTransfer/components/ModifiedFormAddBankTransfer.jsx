@@ -1,0 +1,175 @@
+
+import React from "react";
+import { useNavigate, useSearchParams } from "react-router";
+import { Controller, useForm } from "react-hook-form";
+import {
+  Button,
+  Form,
+  InputField,
+  SelectionField,
+  MultiSelectionField,
+  VisualizationAttr,
+  Spinner,
+  Modal,
+} from "@/commons/components";
+import {
+  ALLOWED_PERMISSIONS,
+  findAllowedPermission,
+} from "@/commons/constants/allowedPermission";
+import cleanFormData from "@/commons/utils/cleanFormData";
+import saveBankTransfer from '../services/saveBankTransfer'
+import { notifyError, notifySuccess} from "@/commons/utils/toaster";
+import * as Layouts from "@/commons/layouts";
+
+const ModifiedFormAddBankTransfer = ({ 
+	bookingListData
+ }) => {
+  const { 
+    control, 
+    handleSubmit,
+  } = useForm()
+  
+  
+  
+  
+  const navigate = useNavigate()
+  
+  const submit = (data) => {
+    const cleanData = cleanFormData(data)
+    saveBankTransfer({
+      ...cleanData,
+    })
+    .then(({ data: { data } }) => {
+      navigate(`/banktransfer`)
+  	notifySuccess(`Save BankTransfer berhasil!`);
+    })
+    .catch((error) => {
+      console.error(error);
+          notifyError(error);
+    });
+  }
+  
+  
+  return (
+	<div>
+	  <Layouts.FormComponentLayout
+		  title="Add BankTransfer" 
+		  onSubmit={handleSubmit(submit)}
+	
+	    vas={[
+		  ]}
+	
+		  formFields={[
+	
+	      <Controller
+	        key="amount"
+	        name="amount"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <InputField
+	          label="Amount"
+	          placeholder="Masukkan amount"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+	
+	,
+	      <Controller
+	        key="statusPayment"
+	        name="statusPayment"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <InputField
+	          label="Status Payment"
+	          placeholder="Masukkan status payment"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+	
+	,
+	      <Controller
+	        key="metodePayment"
+	        name="metodePayment"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <InputField
+	          label="Metode Payment"
+	          placeholder="Masukkan metode payment"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+	
+	,
+	      <Controller
+	        key="namaBankAsal"
+	        name="namaBankAsal"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <InputField
+	          label="Nama Bank Asal"
+	          placeholder="Masukkan nama bank asal"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+	
+	,
+	      <Controller
+	        key="noRekAsal"
+	        name="noRekAsal"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <InputField
+	          label="Nomor Rekening Asal"
+	          placeholder="Masukkan nomor rekening asal"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+	
+		  ,
+	
+	
+	      <Controller
+	        key="idBooking"
+	        name="idBooking"
+	        control={control}
+	        render={({ field, fieldState }) => (
+	        <SelectionField
+	          
+	          label="Booking"
+	          options={bookingListData}
+	          optionKey="idBooking"
+	          optionLabel="idBooking"
+	          placeholder="Masukkan booking"
+	          fieldState={fieldState}
+	          {...field}
+	          isRequired={false}
+	        />
+	        )}
+	      />
+		  ]}
+	
+		  itemsEvents={[
+		    <Button id="_hp8z1l2FEfGjCoBCLIsS7g" key="Submit" type="submit" variant="primary">Submit</Button>
+	    ]}
+	  />
+	    
+	</div>
+  )
+}
+
+export default ModifiedFormAddBankTransfer

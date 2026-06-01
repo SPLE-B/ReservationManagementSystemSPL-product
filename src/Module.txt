@@ -1,0 +1,216 @@
+Rating
+	tes1 Rating Page
+	tes1 Add Rating Page
+	tes1 Update Rating Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+BookingType
+	tes1 Table BookingType Page
+	tes1 Detail BookingType Page
+	tes1 Add BookingType Page
+	tes1 Edit BookingType Page
+
+
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+Pricing
+	tes1 Table Pricing Page
+	tes1 Add Pricing Page
+	tes1 Edit Pricing Page
+
+
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+BankTransfer
+	tes1 Table BankTransfer Page
+	tes1 Detail BankTransfer Page
+	tes1 Add BankTransfer Page
+	tes1 Edit BankTransfer Page
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cancellation
+	tes1 Table Cancellation Page
+	tes1 Add Cancellation Page
+	tes1 Edit Cancellation Page
+
+
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+SessionBased
+	tes1 Table SessionBased Page
+	tes1 Detail SessionBased Page
+	tes1 Add SessionBased Page
+	tes1 Edit SessionBased Page
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resource
+	tes1 Table Resource Page
+	tes1 Detail Resource Page
+	tes1 Add Resource Page
+	tes1 Edit Resource Page
+
+
+	
+
+	
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+Dynamic
+	tes1 Table Dynamic Page
+	tes1 Add Dynamic Page
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+CancellationPaid
+	tes1 Table CancellationPaid Page
+	tes1 Add CancellationPaid Page
+
+
+	
+
+
+	
+
+
+
+
+
+
+
