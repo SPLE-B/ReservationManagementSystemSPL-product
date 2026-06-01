@@ -16,7 +16,7 @@ repositories {
 sourceSets {
     main {
         java {
-            srcDirs = ['reservationmanagement.product.warnetbahagia']
+            srcDirs = ['reservationmanagement.product.ayo']
         }
     }
 }
@@ -44,8 +44,8 @@ dependencies {
 
 }
 
-def jarsDirFile = file('reservationmanagement.product.warnetbahagia')
-def jarFile = file('reservationmanagement.product.warnetbahagia/Warnetbahagia.jar')
+def jarsDirFile = file('reservationmanagement.product.ayo')
+def jarFile = file('reservationmanagement.product.ayo/Ayo.jar')
 def jf = new java.util.jar.JarFile(jarFile)
 def mainCls = jf.manifest?.mainAttributes?.getValue('Main-Class')
 
@@ -62,7 +62,7 @@ file('hibernate.properties').withReader { reader ->
 }
 def dbUser = hibernateProperties.getProperty('hibernate.connection.username')
 def dbPass = hibernateProperties.getProperty('hibernate.connection.password')
-def dbName = "reservationmanagement_product_warnetbahagia"
+def dbName = "reservationmanagement_product_ayo"
 
 // === 1. CREATE DATABASE ===
 task createDB(type: Exec) {

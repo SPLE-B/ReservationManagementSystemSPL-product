@@ -1,6 +1,6 @@
 # WinVMJ Generated Dockerfile
-# Product: Warnetbahagia
-# Context: src-gen/Warnetbahagia/ (same level as docker-compose.yml)
+# Product: Ayo
+# Context: src-gen/Ayo/ (same level as docker-compose.yml)
 
 # Stage 1: Download Gradle dependencies (needs full project context)
 FROM gradle:8.5-jdk17 AS builder
@@ -27,7 +27,7 @@ COPY . .
 COPY --from=builder /app/deps/ ./jars/
 
 # Move product JARs and lib JARs (includes monitoring module) to jars folder
-RUN mv reservationmanagement.product.warnetbahagia/*.jar ./jars/ 2>/dev/null || true && \
+RUN mv reservationmanagement.product.ayo/*.jar ./jars/ 2>/dev/null || true && \
     mv lib/*.jar ./jars/ 2>/dev/null || true
 
 # Set permissions
@@ -39,4 +39,4 @@ USER winvmj
 EXPOSE 7776
 
 # Run the application
-CMD ["java", "-cp", "jars/*:.", "reservationmanagement.product.warnetbahagia.Warnetbahagia"]
+CMD ["java", "-cp", "jars/*:.", "reservationmanagement.product.ayo.Ayo"]

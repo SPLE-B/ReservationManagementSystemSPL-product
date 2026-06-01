@@ -1,4 +1,4 @@
-package reservationmanagement.product.warnetbahagia;
+package reservationmanagement.product.ayo;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -43,21 +43,21 @@ import Reservation.payment.PaymentResourceFactory;
 import Reservation.payment.core.resource.PaymentResource;
 import Reservation.payment.PaymentServiceFactory;
 import Reservation.payment.core.service.PaymentService;
+import Reservation.notification.NotificationResourceFactory;
+import Reservation.notification.core.resource.NotificationResource;
+import Reservation.notification.NotificationServiceFactory;
+import Reservation.notification.core.service.NotificationService;
 import Reservation.rating.RatingResourceFactory;
 import Reservation.rating.core.resource.RatingResource;
 import Reservation.rating.RatingServiceFactory;
 import Reservation.rating.core.service.RatingService;
-import Reservation.cancellation.CancellationResourceFactory;
-import Reservation.cancellation.core.resource.CancellationResource;
-import Reservation.cancellation.CancellationServiceFactory;
-import Reservation.cancellation.core.service.CancellationService;
 
-public class Warnetbahagia {
+public class Ayo {
 
 	private static final Logger logger;
 	
 	static {
-		logger = LoggerFactory.getLogger(Warnetbahagia.class);
+		logger = LoggerFactory.getLogger(Ayo.class);
 	}
     
 	public static void main(String[] args) {
@@ -99,7 +99,7 @@ public class Warnetbahagia {
 		configuration.addAnnotatedClass(Reservation.bookingtype.core.model.BookingTypeComponent.class);
 		configuration.addAnnotatedClass(Reservation.bookingtype.core.model.BookingTypeDecorator.class);
 		configuration.addAnnotatedClass(Reservation.bookingtype.core.model.BookingTypeImpl.class);
-		configuration.addAnnotatedClass(Reservation.bookingtype.sessionbased.model.BookingTypeImpl.class);
+		configuration.addAnnotatedClass(Reservation.bookingtype.daily.model.BookingTypeImpl.class);
 		configuration.addAnnotatedClass(Reservation.pricing.core.model.Pricing.class);
 		configuration.addAnnotatedClass(Reservation.pricing.core.model.PricingComponent.class);
 		configuration.addAnnotatedClass(Reservation.pricing.core.model.PricingDecorator.class);
@@ -108,21 +108,22 @@ public class Warnetbahagia {
 		configuration.addAnnotatedClass(Reservation.resource.core.model.ResourceComponent.class);
 		configuration.addAnnotatedClass(Reservation.resource.core.model.ResourceDecorator.class);
 		configuration.addAnnotatedClass(Reservation.resource.core.model.ResourceImpl.class);
-		configuration.addAnnotatedClass(Reservation.pricing.dynamic.model.PricingImpl.class);
 		configuration.addAnnotatedClass(Reservation.payment.core.model.Payment.class);
 		configuration.addAnnotatedClass(Reservation.payment.core.model.PaymentComponent.class);
 		configuration.addAnnotatedClass(Reservation.payment.core.model.PaymentDecorator.class);
 		configuration.addAnnotatedClass(Reservation.payment.core.model.PaymentImpl.class);
 		configuration.addAnnotatedClass(Reservation.payment.banktransfer.model.PaymentImpl.class);
+		configuration.addAnnotatedClass(Reservation.payment.merchant.model.PaymentImpl.class);
+		configuration.addAnnotatedClass(Reservation.notification.core.model.Notification.class);
+		configuration.addAnnotatedClass(Reservation.notification.core.model.NotificationComponent.class);
+		configuration.addAnnotatedClass(Reservation.notification.core.model.NotificationDecorator.class);
+		configuration.addAnnotatedClass(Reservation.notification.core.model.NotificationImpl.class);
+		configuration.addAnnotatedClass(Reservation.notification.email.model.NotificationImpl.class);
 		configuration.addAnnotatedClass(Reservation.rating.core.model.Rating.class);
 		configuration.addAnnotatedClass(Reservation.rating.core.model.RatingComponent.class);
 		configuration.addAnnotatedClass(Reservation.rating.core.model.RatingDecorator.class);
 		configuration.addAnnotatedClass(Reservation.rating.core.model.RatingImpl.class);
-		configuration.addAnnotatedClass(Reservation.cancellation.core.model.Cancellation.class);
-		configuration.addAnnotatedClass(Reservation.cancellation.core.model.CancellationComponent.class);
-		configuration.addAnnotatedClass(Reservation.cancellation.core.model.CancellationDecorator.class);
-		configuration.addAnnotatedClass(Reservation.cancellation.core.model.CancellationImpl.class);
-		configuration.addAnnotatedClass(Reservation.cancellation.cancellationpaid.model.CancellationImpl.class);
+		configuration.addAnnotatedClass(Reservation.rating.comment.model.RatingImpl.class);
 
 		Map<String, Object> featureModelMappings = mappingFeatureModel();
 		Gson gson = new Gson();
@@ -176,12 +177,12 @@ public class Warnetbahagia {
             .createBookingTypeResource("Reservation.bookingtype.core.resource.BookingTypeResourceImpl"
                 );
 			
-        BookingTypeService sessionbasedBookingType2Service = BookingTypeServiceFactory
-            .createBookingTypeService("Reservation.bookingtype.sessionbased.service.BookingTypeServiceImpl"
+        BookingTypeService dailyBookingType2Service = BookingTypeServiceFactory
+            .createBookingTypeService("Reservation.bookingtype.daily.service.BookingTypeServiceImpl"
             	, bookingtypeBookingType2Service);		
 
-        BookingTypeResource sessionbasedBookingType2Resource = BookingTypeResourceFactory
-            .createBookingTypeResource("Reservation.bookingtype.sessionbased.resource.BookingTypeResourceImpl"
+        BookingTypeResource dailyBookingType2Resource = BookingTypeResourceFactory
+            .createBookingTypeResource("Reservation.bookingtype.daily.resource.BookingTypeResourceImpl"
                 , bookingtypeBookingType2Resource);
 			
         PricingService pricingPricing2Service = PricingServiceFactory
@@ -200,14 +201,6 @@ public class Warnetbahagia {
             .createResourceResource("Reservation.resource.core.resource.ResourceResourceImpl"
                 );
 			
-        PricingService dynamicPricing2Service = PricingServiceFactory
-            .createPricingService("Reservation.pricing.dynamic.service.PricingServiceImpl"
-            	, pricingPricing2Service);		
-
-        PricingResource dynamicPricing2Resource = PricingResourceFactory
-            .createPricingResource("Reservation.pricing.dynamic.resource.PricingResourceImpl"
-                , pricingPricing2Resource);
-			
         PaymentService paymentPayment2Service = PaymentServiceFactory
             .createPaymentService("Reservation.payment.core.service.PaymentServiceImpl"
             	);		
@@ -224,6 +217,38 @@ public class Warnetbahagia {
             .createPaymentResource("Reservation.payment.banktransfer.resource.PaymentResourceImpl"
                 , paymentPayment2Resource);
 			
+        PaymentService paymentPayment4Service = PaymentServiceFactory
+            .createPaymentService("Reservation.payment.core.service.PaymentServiceImpl"
+            	);		
+
+        PaymentResource paymentPayment4Resource = PaymentResourceFactory
+            .createPaymentResource("Reservation.payment.core.resource.PaymentResourceImpl"
+                );
+			
+        PaymentService merchantPayment2Service = PaymentServiceFactory
+            .createPaymentService("Reservation.payment.merchant.service.PaymentServiceImpl"
+            	, paymentPayment4Service);		
+
+        PaymentResource merchantPayment2Resource = PaymentResourceFactory
+            .createPaymentResource("Reservation.payment.merchant.resource.PaymentResourceImpl"
+                , paymentPayment4Resource);
+			
+        NotificationService notificationNotification2Service = NotificationServiceFactory
+            .createNotificationService("Reservation.notification.core.service.NotificationServiceImpl"
+            	);		
+
+        NotificationResource notificationNotification2Resource = NotificationResourceFactory
+            .createNotificationResource("Reservation.notification.core.resource.NotificationResourceImpl"
+                );
+			
+        NotificationService emailNotification2Service = NotificationServiceFactory
+            .createNotificationService("Reservation.notification.email.service.NotificationServiceImpl"
+            	, notificationNotification2Service);		
+
+        NotificationResource emailNotification2Resource = NotificationResourceFactory
+            .createNotificationResource("Reservation.notification.email.resource.NotificationResourceImpl"
+                , notificationNotification2Resource);
+			
         RatingService ratingRating2Service = RatingServiceFactory
             .createRatingService("Reservation.rating.core.service.RatingServiceImpl"
             	);		
@@ -232,40 +257,50 @@ public class Warnetbahagia {
             .createRatingResource("Reservation.rating.core.resource.RatingResourceImpl"
                 );
 			
-        CancellationService cancellationCancellation2Service = CancellationServiceFactory
-            .createCancellationService("Reservation.cancellation.core.service.CancellationServiceImpl"
-            	);		
+        RatingService commentRating2Service = RatingServiceFactory
+            .createRatingService("Reservation.rating.comment.service.RatingServiceImpl"
+            	, ratingRating2Service);		
 
-        CancellationResource cancellationCancellation2Resource = CancellationResourceFactory
-            .createCancellationResource("Reservation.cancellation.core.resource.CancellationResourceImpl"
-                );
-			
-        CancellationService cancellationpaidCancellation2Service = CancellationServiceFactory
-            .createCancellationService("Reservation.cancellation.cancellationpaid.service.CancellationServiceImpl"
-            	, cancellationCancellation2Service);		
-
-        CancellationResource cancellationpaidCancellation2Resource = CancellationResourceFactory
-            .createCancellationResource("Reservation.cancellation.cancellationpaid.resource.CancellationResourceImpl"
-                , cancellationCancellation2Resource);
+        RatingResource commentRating2Resource = RatingResourceFactory
+            .createRatingResource("Reservation.rating.comment.resource.RatingResourceImpl"
+                , ratingRating2Resource);
 			
 
-		logger.info("Binding endpoints for cancellationpaidCancellation2Resource");
-		Router.route(cancellationpaidCancellation2Resource);
+		logger.info("Binding endpoints for commentRating2Resource");
+		Router.route(commentRating2Resource);
 		
-		logger.info("Binding endpoints for cancellationpaidCancellation2Service");
-		Router.route(cancellationpaidCancellation2Service);
-		
-		logger.info("Binding endpoints for cancellationCancellation2Resource");
-		Router.route(cancellationCancellation2Resource);
-		
-		logger.info("Binding endpoints for cancellationCancellation2Service");
-		Router.route(cancellationCancellation2Service);
+		logger.info("Binding endpoints for commentRating2Service");
+		Router.route(commentRating2Service);
 		
 		logger.info("Binding endpoints for ratingRating2Resource");
 		Router.route(ratingRating2Resource);
 		
 		logger.info("Binding endpoints for ratingRating2Service");
 		Router.route(ratingRating2Service);
+		
+		logger.info("Binding endpoints for emailNotification2Resource");
+		Router.route(emailNotification2Resource);
+		
+		logger.info("Binding endpoints for emailNotification2Service");
+		Router.route(emailNotification2Service);
+		
+		logger.info("Binding endpoints for notificationNotification2Resource");
+		Router.route(notificationNotification2Resource);
+		
+		logger.info("Binding endpoints for notificationNotification2Service");
+		Router.route(notificationNotification2Service);
+		
+		logger.info("Binding endpoints for merchantPayment2Resource");
+		Router.route(merchantPayment2Resource);
+		
+		logger.info("Binding endpoints for merchantPayment2Service");
+		Router.route(merchantPayment2Service);
+		
+		logger.info("Binding endpoints for paymentPayment4Resource");
+		Router.route(paymentPayment4Resource);
+		
+		logger.info("Binding endpoints for paymentPayment4Service");
+		Router.route(paymentPayment4Service);
 		
 		logger.info("Binding endpoints for banktransferPayment2Resource");
 		Router.route(banktransferPayment2Resource);
@@ -279,12 +314,6 @@ public class Warnetbahagia {
 		logger.info("Binding endpoints for paymentPayment2Service");
 		Router.route(paymentPayment2Service);
 		
-		logger.info("Binding endpoints for dynamicPricing2Resource");
-		Router.route(dynamicPricing2Resource);
-		
-		logger.info("Binding endpoints for dynamicPricing2Service");
-		Router.route(dynamicPricing2Service);
-		
 		logger.info("Binding endpoints for resource2Resource");
 		Router.route(resource2Resource);
 		
@@ -297,11 +326,11 @@ public class Warnetbahagia {
 		logger.info("Binding endpoints for pricingPricing2Service");
 		Router.route(pricingPricing2Service);
 		
-		logger.info("Binding endpoints for sessionbasedBookingType2Resource");
-		Router.route(sessionbasedBookingType2Resource);
+		logger.info("Binding endpoints for dailyBookingType2Resource");
+		Router.route(dailyBookingType2Resource);
 		
-		logger.info("Binding endpoints for sessionbasedBookingType2Service");
-		Router.route(sessionbasedBookingType2Service);
+		logger.info("Binding endpoints for dailyBookingType2Service");
+		Router.route(dailyBookingType2Service);
 		
 		logger.info("Binding endpoints for bookingtypeBookingType2Resource");
 		Router.route(bookingtypeBookingType2Resource);
@@ -325,7 +354,7 @@ public class Warnetbahagia {
 					Reservation.bookingtype.core.model.BookingTypeComponent.class.getName()
 				});
 				put("deltas", new String[] {
-					Reservation.bookingtype.sessionbased.model.BookingTypeImpl.class.getName()
+					Reservation.bookingtype.daily.model.BookingTypeImpl.class.getName()
 				});
 			}});
 		featureModelMappings.put(
@@ -335,7 +364,6 @@ public class Warnetbahagia {
 					Reservation.pricing.core.model.PricingComponent.class.getName()
 				});
 				put("deltas", new String[] {
-					Reservation.pricing.dynamic.model.PricingImpl.class.getName()
 				});
 			}});
 		featureModelMappings.put(
@@ -354,7 +382,18 @@ public class Warnetbahagia {
 					Reservation.payment.core.model.PaymentComponent.class.getName()
 				});
 				put("deltas", new String[] {
-					Reservation.payment.banktransfer.model.PaymentImpl.class.getName()
+					Reservation.payment.banktransfer.model.PaymentImpl.class.getName(),
+					Reservation.payment.merchant.model.PaymentImpl.class.getName()
+				});
+			}});
+		featureModelMappings.put(
+            Reservation.notification.core.model.NotificationComponent.class.getName(),
+			new HashMap<String, String[]>() {{ 
+				put("components", new String[] {
+					Reservation.notification.core.model.NotificationComponent.class.getName()
+				});
+				put("deltas", new String[] {
+					Reservation.notification.email.model.NotificationImpl.class.getName()
 				});
 			}});
 		featureModelMappings.put(
@@ -364,16 +403,7 @@ public class Warnetbahagia {
 					Reservation.rating.core.model.RatingComponent.class.getName()
 				});
 				put("deltas", new String[] {
-				});
-			}});
-		featureModelMappings.put(
-            Reservation.cancellation.core.model.CancellationComponent.class.getName(),
-			new HashMap<String, String[]>() {{ 
-				put("components", new String[] {
-					Reservation.cancellation.core.model.CancellationComponent.class.getName()
-				});
-				put("deltas", new String[] {
-					Reservation.cancellation.cancellationpaid.model.CancellationImpl.class.getName()
+					Reservation.rating.comment.model.RatingImpl.class.getName()
 				});
 			}});
 		featureModelMappings.put(
