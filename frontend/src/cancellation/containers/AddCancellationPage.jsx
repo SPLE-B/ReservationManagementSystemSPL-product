@@ -6,12 +6,11 @@ import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import FormForm from '../components/FormForm'
-import getBookingListData from '../services/getBookingListData'
+import FormAddCancellation from '../components/FormAddCancellation'
 
 const AddCancellationPage = props => {
   const [isLoading, setIsLoading] = useState({
-	form: false,
+	addCancellation: false,
 
   });
   const { setTitle } = useContext(HeaderContext);
@@ -19,20 +18,6 @@ const AddCancellationPage = props => {
   useEffect(() => {
     setTitle("Add Cancellation Page")
   }, []);
-
-
-const [bookingListData, setBookingListData] = useState()
-
-  useEffect(() => {
-    const fetch = async () => {
-	  setIsLoading(prev => ({...prev, form: true}))
-      const { data: bookingListDataResponse } = await getBookingListData({  })
-
-	  setBookingListData(bookingListDataResponse.data)
-	  setIsLoading(prev => ({...prev, form: false}))
-    }
-	fetch()
-  }, [])
 
   return (
 	<Layouts.ViewContainerLayout
@@ -43,17 +28,12 @@ const [bookingListData, setBookingListData] = useState()
 		}
 	>
 <Layouts.FormContainerLayout
-		singularName={""}
-		isLoading={isLoading.form}
+		singularName={"Cancellation"}
+		
 	>
-		{bookingListData ? 
-		(<>
-		 <FormForm
-			{...{ 
-				bookingListData
-				}}
-		 /> 
-		</>)  : (<></>)}
+		<FormAddCancellation
+			{...props}
+		/>
 	</Layouts.FormContainerLayout>
 
 	</Layouts.ViewContainerLayout>

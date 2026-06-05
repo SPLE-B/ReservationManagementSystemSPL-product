@@ -5,10 +5,8 @@ import { useParams } from "@/commons/hooks/useParams"
 import { useAuth } from '@/commons/auth';
 import { Button, Modal, Spinner } from '@/commons/components';
 import * as Layouts from "@/commons/layouts";
-const PricingTable = ({ listPricing,
-		 
-
-	}) => {
+const PricingTable = ({ 
+    listPricing}) => {
   const { checkPermission } = useAuth();
   
   return (
@@ -17,36 +15,43 @@ const PricingTable = ({ listPricing,
   	  items={[listPricing]}
   	  itemsAttrs={[
           {
-            id: "idResource",
+            id: "idpricing",
             condition: "",
-            label: "Id Resource",
-            featureName: "idResource",
+            label: "Idpricing",
+            featureName: "idPricing",
             editable: false
           }
   ,        {
-            id: "basePrice",
-            condition: "",
-            label: "Base Price",
+            id: "baseprice",
+            condition: "isCurrency",
+            label: "Baseprice",
             featureName: "basePrice",
             editable: false
           }
   ,        {
-            id: "idPricing",
+            id: "idresource",
             condition: "",
-            label: "Id Pricing",
-            featureName: "idPricing",
+            label: "Idresource",
+            featureName: "idResource",
+            editable: false
+          }
+  ,        {
+            id: "peakpercentage",
+            condition: "",
+            label: "Peakpercentage",
+            featureName: "peakPercentage",
             editable: false
           }
   ]}
         itemsEvents={(pricingItem) => [
-          <Link to={`/pricing/update/${pricingItem.idPricing}`}>
+          <Link to={`/pricing/edit/${pricingItem.idPricing}`}>
             <Button
-              id="_FRmeMExuEfGmhuROO-RZsA"
+              id="_DvlAOV2sEfGvmuzulXFRIA"
               size="sm"
               variant=
                   "primary"
             >
-              Update Pricing
+              Edit
             </Button>
           </Link>
         ]}

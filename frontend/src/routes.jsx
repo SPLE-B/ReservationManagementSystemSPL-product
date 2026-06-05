@@ -7,9 +7,14 @@ import homeRoutes from "@/home/routes";
 import ratingRoutes from "@/rating/routes";
 import bookingTypeRoutes from "@/bookingType/routes";
 import pricingRoutes from "@/pricing/routes";
-import paymentRoutes from "@/payment/routes";
+import bankTransferRoutes from "@/bankTransfer/routes";
 import notificationRoutes from "@/notification/routes";
 import cancellationRoutes from "@/cancellation/routes";
+import resourceRoutes from "@/resource/routes";
+import dailyRoutes from "./daily/routes";
+import emailRoutes from "./email/routes";
+import cancellationPaidRoutes from "./cancellationPaid/routes";
+import dynamicRoutes from "./dynamic/routes";
 
 const GlobalRoutes = () => {
   const router = useRoutes([
@@ -19,11 +24,12 @@ const GlobalRoutes = () => {
 	...roleRoutes,
 	...homeRoutes, 
 	...ratingRoutes, 
-	...bookingTypeRoutes, 
-	...pricingRoutes, 
-	...paymentRoutes, 
-	...notificationRoutes, 
-	...cancellationRoutes, 
+	...dailyRoutes, 
+	...dynamicRoutes, 
+	...bankTransferRoutes, 
+	...emailRoutes, 
+	...cancellationPaidRoutes, 
+	...resourceRoutes, 
   ])
   return router
 }

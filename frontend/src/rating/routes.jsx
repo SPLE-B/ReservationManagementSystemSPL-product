@@ -16,7 +16,7 @@ const ratingRoutes = [
   }	
 ,
 { 
-    path: "/rating/update",
+    path: "/rating/update/:idRating",
     element: <UpdateRatingPage />,
   }	
 

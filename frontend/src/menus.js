@@ -72,10 +72,18 @@ addMenu({
 
 addMenu({
 	id: '_c-K7YEzVEfGZ4ZceE57zww',
-	route: '/payment',
+	route: '#',
     label: 'Payment',
     permission: '',
 	subMenus: [],
+})
+
+addSubMenu('Payment', {
+	id: '_QANrEF2HEfGjCoBCLIsS7g',
+	route: '/banktransfer',
+	label: 'Bank Transfer',
+    permission: '',
+	
 })
 
 addMenu({
@@ -90,6 +98,14 @@ addMenu({
 	id: '_bei-4EzZEfGZ4ZceE57zww',
 	route: '/cancellation',
     label: 'Cancellation',
+    permission: '',
+	subMenus: [],
+})
+
+addMenu({
+	id: '_omppwF2REfGjCoBCLIsS7g',
+	route: '/resource',
+    label: 'Resource',
     permission: '',
 	subMenus: [],
 })

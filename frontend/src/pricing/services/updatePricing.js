@@ -9,7 +9,7 @@ const updatePricing = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.put(`${environment.rootApi}/call/pricing/update`, body,
+	return axios.put(`${environment.rootApi}/call/dynamic/update`, body,
 	{
 		params: { token },
 		

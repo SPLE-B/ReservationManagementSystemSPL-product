@@ -5,28 +5,26 @@ import { useParams } from "@/commons/hooks/useParams"
 import { useAuth } from '@/commons/auth';
 import { Button, Modal, Spinner } from '@/commons/components';
 import * as Layouts from "@/commons/layouts";
-const CancellationTable = ({ cancellationListData,
-		 
-
-	}) => {
+const CancellationTable = ({ 
+    listCancellation}) => {
   const { checkPermission } = useAuth();
   
   return (
   <>
     <Layouts.ListComponentTableLayout
-  	  items={[cancellationListData]}
+  	  items={[listCancellation]}
   	  itemsAttrs={[
           {
-            id: "idCancellation",
+            id: "idcancellation",
             condition: "",
-            label: "Id Cancellation",
+            label: "Idcancellation",
             featureName: "idCancellation",
             editable: false
           }
   ,        {
-            id: "idBooking",
+            id: "idbooking",
             condition: "",
-            label: "Id Booking",
+            label: "Idbooking",
             featureName: "idBooking",
             editable: false
           }
@@ -38,15 +36,38 @@ const CancellationTable = ({ cancellationListData,
             editable: false
           }
   ,        {
-            id: "cancelledAt",
+            id: "cancelledat",
             condition: "",
-            label: "CancelledAt",
+            label: "Cancelledat",
             featureName: "cancelledAt",
+            editable: false
+          }
+  ,        {
+            id: "refundamount",
+            condition: "",
+            label: "Refundamount",
+            featureName: "refundAmount",
+            editable: false
+          }
+  ,        {
+            id: "penaltyfee",
+            condition: "",
+            label: "Penaltyfee",
+            featureName: "penaltyFee",
             editable: false
           }
   ]}
         itemsEvents={(cancellationItem) => [
-          
+          <Link to={`/cancellation/edit/${cancellationItem.idCancellation}`}>
+            <Button
+              id="_D-Lc5l2sEfGvmuzulXFRIA"
+              size="sm"
+              variant=
+                  "primary"
+            >
+              Edit
+            </Button>
+          </Link>
         ]}
   	/>
   </>

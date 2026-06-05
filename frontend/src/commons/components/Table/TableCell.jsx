@@ -46,7 +46,6 @@ const TableCell = ({
         <Attachment files={children} />
       ) : isCurrency ? (
         <span className="max-w-[150px] flex justify-between">
-          <span>Rp</span>
           {format_currency(children)}
         </span>
       ) : isArray ? (

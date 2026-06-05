@@ -45,10 +45,10 @@ useEffect(() => {
 		buttons={
 			<>
 			<Layouts.ViewContainerButtonLayout>
-			  	<Link to={`/pricing/tambah
+			  	<Link to={`/pricing/add
 			  	`}>
-			  		<Button id="_I4GdEExpEfGmhuROO-RZsA" className="p-2" variant="primary">
-			  		  Tambah Pricing
+			  		<Button id="_DvlAMF2sEfGvmuzulXFRIA" className="p-2" variant="primary">
+			  		  Add
 			  		</Button>
 			  	</Link>
 			

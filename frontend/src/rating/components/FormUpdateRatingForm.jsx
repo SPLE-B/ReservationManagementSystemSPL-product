@@ -82,8 +82,7 @@ const FormUpdateRatingForm = ({
 	        )}
 	      />
 	
-		  ,
-	
+	,
 		  ]}
 	
 		  itemsEvents={[

@@ -7,7 +7,7 @@ const getRatingDetailData = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let body = Object.assign(params, {token});
-	return axios.post(`${environment.rootApi}/call/rating/detail`, body, {
+	return axios.post(`${environment.rootApi}/call/rating/detail`, body, {	
 		headers: {
 			'Authorization': token,
 		}

@@ -7,7 +7,7 @@ const getListPricing = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let paramsGet = Object.assign(params, {token});
-	return axios.get(`${environment.rootApi}/call/pricing/list`, {
+	return axios.get(`${environment.rootApi}/call/dynamic/list`, {
 		params: paramsGet,		
 		headers: {
 			'Authorization': token,

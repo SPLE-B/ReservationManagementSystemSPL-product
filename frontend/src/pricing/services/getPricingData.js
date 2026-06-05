@@ -7,7 +7,7 @@ const getPricingData = (params = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	let body = Object.assign(params, {token});
-	return axios.post(`${environment.rootApi}/call/pricing/detail`, body, {
+	return axios.post(`${environment.rootApi}/call/dynamic/detail`, body, {	
 		headers: {
 			'Authorization': token,
 		}

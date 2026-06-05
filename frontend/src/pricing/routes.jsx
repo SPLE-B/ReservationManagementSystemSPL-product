@@ -1,8 +1,8 @@
 
 import React from 'react';
 import TablePricingPage from './containers/TablePricingPage'
-import TambahPricingPage from './containers/TambahPricingPage'
-import UpdatePricingPage from './containers/UpdatePricingPage'
+import AddPricingPage from './containers/AddPricingPage'
+import EditPricingPage from './containers/EditPricingPage'
 
 const pricingRoutes = [
 { 
@@ -11,13 +11,13 @@ const pricingRoutes = [
   }	
 ,
 { 
-    path: "/pricing/tambah",
-    element: <TambahPricingPage />,
+    path: "/pricing/add",
+    element: <AddPricingPage />,
   }	
 ,
 { 
-    path: "/pricing/update/:idPricing",
-    element: <UpdatePricingPage />,
+    path: "/pricing/edit/:idPricing",
+    element: <EditPricingPage />,
   }	
 
 ]

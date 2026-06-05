@@ -1,29 +1,29 @@
 
 import React from 'react';
-import BookingPage from './containers/BookingPage'
-import AddBookingPage from './containers/AddBookingPage'
-import DetailBookingPage from './containers/DetailBookingPage'
-import UpdateBookingPage from './containers/UpdateBookingPage'
+import TableBookingTypePage from './containers/TableBookingTypePage'
+import DetailBookingTypePage from './containers/DetailBookingTypePage'
+import AddBookingTypePage from './containers/AddBookingTypePage'
+import EditBookingTypePage from './containers/EditBookingTypePage'
 
 const bookingTypeRoutes = [
 { 
     path: "/booking",
-    element: <BookingPage />,
+    element: <TableBookingTypePage />,
   }	
 ,
 { 
     path: "/booking/add",
-    element: <AddBookingPage />,
+    element: <AddBookingTypePage />,
   }	
 ,
 { 
-    path: "/booking/update",
-    element: <UpdateBookingPage />,
+    path: "/booking/edit/:idBooking",
+    element: <EditBookingTypePage />,
   }	
 ,
 { 
     path: "/booking/:idBooking",
-    element: <DetailBookingPage />,
+    element: <DetailBookingTypePage />,
   }	
 
 ]

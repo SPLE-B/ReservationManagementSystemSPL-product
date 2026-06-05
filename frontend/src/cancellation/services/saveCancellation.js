@@ -9,7 +9,7 @@ const saveCancellation = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/cancellation/save`, body,
+	return axios.post(`${environment.rootApi}/call/cancellationpaid/save`, body,
 	{
 		params: { token },
 		

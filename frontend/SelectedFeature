@@ -1,6 +1,13 @@
+Resource
 BookingType
-Rating
+Daily
 Pricing
-Cancellation
+Dynamic
 Payment
+BankTransfer
 Notification
+Email
+Cancellation
+CancellationPaid
+Rating
+Rating

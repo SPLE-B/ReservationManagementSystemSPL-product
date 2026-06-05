@@ -6,11 +6,11 @@ import { Link } from "react-router";
 import { useParams } from "@/commons/hooks/useParams"
 import { HeaderContext } from "@/commons/components"
 import { useSearchParams } from "react-router";
-import FormAddNotificationForm from '../components/FormAddNotificationForm'
+import FormAddNotification from '../components/FormAddNotification'
 
 const AddNotificationPage = props => {
   const [isLoading, setIsLoading] = useState({
-	addNotificationForm: false,
+	addNotification: false,
 
   });
   const { setTitle } = useContext(HeaderContext);
@@ -31,7 +31,7 @@ const AddNotificationPage = props => {
 		singularName={"Notification"}
 		
 	>
-		<FormAddNotificationForm
+		<FormAddNotification
 			{...props}
 		/>
 	</Layouts.FormContainerLayout>

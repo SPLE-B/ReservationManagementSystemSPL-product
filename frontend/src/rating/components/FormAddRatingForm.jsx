@@ -76,9 +76,8 @@ const FormAddRatingForm = ({
 	        )}
 	      />
 	
-		  ,
-	
-	
+	,
+
 	      <Controller
 	        key="idResource"
 	        name="idResource"

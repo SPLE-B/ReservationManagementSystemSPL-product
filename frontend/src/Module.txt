@@ -21,13 +21,11 @@ Rating
 
 
 
-
-
 BookingType
-	tes1 Booking Page
-	tes1 Add Booking Page
-	tes1 Detail Booking Page
-	tes1 Update Booking Page
+	tes1 Table BookingType Page
+	tes1 Detail BookingType Page
+	tes1 Add BookingType Page
+	tes1 Edit BookingType Page
 
 
 	
@@ -39,8 +37,6 @@ BookingType
 	
 
 	
-	
-
 	
 
 	
@@ -56,8 +52,8 @@ BookingType
 
 Pricing
 	tes1 Table Pricing Page
-	tes1 Tambah Pricing Page
-	tes1 Update Pricing Page
+	tes1 Add Pricing Page
+	tes1 Edit Pricing Page
 
 
 	
@@ -75,27 +71,29 @@ Pricing
 
 
 
-Payment
-	tes1 Payment Page
-	tes1 Add Payment Page
-	tes1 Detail Payment Page
-	tes1 Update Payment Page
+BankTransfer
+	tes1 Table BankTransfer Page
+	tes1 Detail BankTransfer Page
+	tes1 Add BankTransfer Page
+	tes1 Edit BankTransfer Page
 
 
 	
 
-	
-	
-
-	
-	
-
-	
-	
 
 	
 
+
 	
+
+
+	
+
+
+
+
+
+
 
 
 
@@ -105,14 +103,20 @@ Payment
 
 
 Notification
-	tes1 Notification Page
+	tes1 Table Notification Page
 	tes1 Add Notification Page
+	tes1 Edit Notification Page
 
 
 	
 
 	
 	
+	
+
+	
+
+
 
 
 
@@ -120,8 +124,62 @@ Notification
 
 
 Cancellation
-	tes1 Cancellation Page
+	tes1 Table Cancellation Page
 	tes1 Add Cancellation Page
+	tes1 Edit Cancellation Page
+
+
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+Daily
+	tes1 Table Daily Page
+	tes1 Detail Daily Page
+	tes1 Add Daily Page
+	tes1 Edit Daily Page
+
+
+	
+
+
+	
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resource
+	tes1 Table Resource Page
+	tes1 Detail Resource Page
+	tes1 Add Resource Page
+	tes1 Edit Resource Page
 
 
 	
@@ -130,6 +188,65 @@ Cancellation
 	
 
 	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+Dynamic
+	tes1 Table Dynamic Page
+	tes1 Add Dynamic Page
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+CancellationPaid
+	tes1 Table CancellationPaid Page
+	tes1 Add CancellationPaid Page
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+Email
+	tes1 Table Email Page
+	tes1 Add Email Page
+
+
+	
+
+
+	
+
+
 
 
 

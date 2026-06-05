@@ -9,7 +9,7 @@ const saveBookingType = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/bookingtype/save`, body,
+	return axios.post(`${environment.rootApi}/call/daily/save`, body,
 	{
 		params: { token },
 		

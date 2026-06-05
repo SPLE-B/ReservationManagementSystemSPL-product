@@ -9,7 +9,7 @@ const savePricing = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/pricing/save`, body,
+	return axios.post(`${environment.rootApi}/call/dynamic/save`, body,
 	{
 		params: { token },
 		

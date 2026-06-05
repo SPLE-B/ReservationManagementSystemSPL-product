@@ -9,7 +9,7 @@ const saveNotification = (data = {}) => {
 	const { getToken } = tokenManager();
 	const token = getToken();
 	
-	return axios.post(`${environment.rootApi}/call/notification/save`, body,
+	return axios.post(`${environment.rootApi}/call/email/save`, body,
 	{
 		params: { token },
 		

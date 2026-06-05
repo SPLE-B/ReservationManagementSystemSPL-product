@@ -1,17 +1,23 @@
 
 import React from 'react';
-import CancellationPage from './containers/CancellationPage'
+import TableCancellationPage from './containers/TableCancellationPage'
 import AddCancellationPage from './containers/AddCancellationPage'
+import EditCancellationPage from './containers/EditCancellationPage'
 
 const cancellationRoutes = [
 { 
     path: "/cancellation",
-    element: <CancellationPage />,
+    element: <TableCancellationPage />,
   }	
 ,
 { 
     path: "/cancellation/add",
     element: <AddCancellationPage />,
+  }	
+,
+{ 
+    path: "/cancellation/edit/:idCancellation",
+    element: <EditCancellationPage />,
   }	
 
 ]
